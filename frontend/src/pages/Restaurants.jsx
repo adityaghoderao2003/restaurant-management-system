@@ -19,7 +19,7 @@ const Restaurants = () => {
 
     const getRestaurants = async () => {
         try {
-            const response = await fetch("http://localhost:5000/api/restaurants",
+            const response = await fetch("https://restaurant-management-system-nzgm.onrender.com/api/restaurants",
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`
@@ -63,7 +63,7 @@ const Restaurants = () => {
                 form.append('image', formData.image);
             }
 
-            const response = await fetch('http://localhost:5000/api/restaurants',
+            const response = await fetch('https://restaurant-management-system-nzgm.onrender.com/api/restaurants',
                 {
                     method: 'POST',
                     headers: {
@@ -115,7 +115,7 @@ const Restaurants = () => {
 
         try {
             const response = await fetch(
-                `http://localhost:5000/api/restaurants/${id}`,
+                `https://restaurant-management-system-nzgm.onrender.com/api/restaurants/${id}`,
                 {
                     method: "DELETE",
                     headers: {
@@ -152,7 +152,7 @@ const Restaurants = () => {
                 form.append('image', formData.image);
             }
 
-            const response = await fetch(`http://localhost:5000/api/restaurants/${editId}`, {
+            const response = await fetch(`https://restaurant-management-system-nzgm.onrender.com/api/restaurants/${editId}`, {
                 method: 'PUT',
                 headers: {
                     Authorization: `Bearer ${token}`

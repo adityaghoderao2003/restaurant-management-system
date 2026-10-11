@@ -21,7 +21,7 @@ const Food = () => {
 
     const getFoods = async () => {
         try {
-            const response = await fetch("http://localhost:5000/api/foods");
+            const response = await fetch("https://restaurant-management-system-nzgm.onrender.com/api/foods");
 
             const data = await response.json();
 
@@ -49,7 +49,7 @@ const Food = () => {
     const getRestaurants = async () => {
         try {
             const response = await fetch(
-                "http://localhost:5000/api/restaurants",
+                "https://restaurant-management-system-nzgm.onrender.com/api/restaurants",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -88,7 +88,7 @@ const Food = () => {
             }
 
             const response = await fetch(
-                "http://localhost:5000/api/foods",
+                "https://restaurant-management-system-nzgm.onrender.com/api/foods",
                 {
                     method: "POST",
                     headers: {
@@ -141,7 +141,7 @@ const Food = () => {
             }
 
             const response = await fetch(
-                `http://localhost:5000/api/foods/${editId}`,
+                `https://restaurant-management-system-nzgm.onrender.com/api/foods/${editId}`,
                 {
                     method: "PUT",
                     headers: {

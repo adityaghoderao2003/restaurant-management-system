@@ -19,7 +19,7 @@ const Orders = () => {
     const getOrders = async () => {
         try {
             const response = await fetch(
-                "http://localhost:5000/api/orders",
+                "https://restaurant-management-system-nzgm.onrender.com/api/orders",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -44,7 +44,7 @@ const Orders = () => {
     const getRestaurants = async () => {
         try {
             const response = await fetch(
-                "http://localhost:5000/api/restaurants"
+                "https://restaurant-management-system-nzgm.onrender.com/api/restaurants"
             );
 
             const data = await response.json();
@@ -64,7 +64,7 @@ const Orders = () => {
     const getFoods = async () => {
         try {
             const response = await fetch(
-                "http://localhost:5000/api/foods"
+                "https://restaurant-management-system-nzgm.onrender.com/api/foods"
             );
 
             const data = await response.json();
@@ -94,7 +94,7 @@ const Orders = () => {
 
         try {
             const response = await fetch(
-                "http://localhost:5000/api/orders",
+                "https://restaurant-management-system-nzgm.onrender.com/api/orders",
                 {
                     method: "POST",
                     headers: {
@@ -135,7 +135,7 @@ const Orders = () => {
     const updateOrderStatus = async (id, status) => {
         try {
             const response = await fetch(
-                `http://localhost:5000/api/orders/${id}`,
+                `https://restaurant-management-system-nzgm.onrender.com/api/orders/${id}`,
                 {
                     method: "PUT",
                     headers: {
@@ -174,7 +174,7 @@ const Orders = () => {
 
         try {
             const response = await fetch(
-                `http://localhost:5000/api/orders/${id}`,
+                `https://restaurant-management-system-nzgm.onrender.com/api/orders/${id}`,
                 {
                     method: "DELETE",
                     headers: {
