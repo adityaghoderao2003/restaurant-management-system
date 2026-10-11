@@ -42,7 +42,9 @@ function Register() {
             }
 
             toast.success("Registration successful");
-            navigate("/login");
+            setTimeout(() => {
+                navigate("/login");
+            }, 1000);
 
         } catch (error) {
             console.log(error);

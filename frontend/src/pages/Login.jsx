@@ -44,9 +44,9 @@ function Login() {
             localStorage.setItem("role", data.role);
 
             toast.success("Login successful");
-            navigate("/");
-            window.location.reload();
-
+            setTimeout(() => {
+                navigate("/");
+            }, 3000);
         } catch (error) {
             console.log(error);
             toast.error("Server error");
