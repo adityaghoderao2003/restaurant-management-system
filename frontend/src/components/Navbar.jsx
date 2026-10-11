@@ -11,7 +11,9 @@ function Navbar() {
         localStorage.removeItem('role');
 
         toast.success('Logout successful');
-        navigate('/login');
+        setTimeout(() => {
+            navigate('/login');
+        }, 1000);
     }
     
     return (
