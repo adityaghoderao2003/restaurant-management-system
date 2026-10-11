@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 const Restaurants = () => {
 
@@ -30,13 +31,13 @@ const Restaurants = () => {
             const data = await response.json();
             console.log(data)
             if (!response.ok) {
-                alert(data.message);
+                toast.error(data.message);
                 return;
             }
 
             setRestaurants(data.restaurants || []);
         } catch (err) {
-            console.log(error);
+            console.log(err);
         }
     }
 
@@ -76,10 +77,10 @@ const Restaurants = () => {
             const data = await response.json();
 
             if (!response.ok) {
-                alert(data.message);
+                toast.error(data.message);
                 return;
             }
-            alert('Restaurant created succesfully');
+            toast.success('Restaurant created succesfully');
 
             setFormData({
                 name: '',
@@ -127,11 +128,11 @@ const Restaurants = () => {
             const data = await response.json();
 
             if (!response.ok) {
-                alert(data.message);
+                toast.error(data.message);
                 return;
             }
 
-            alert("Restaurant deleted successfully");
+            toast.success("Restaurant deleted successfully");
             getRestaurants();
 
         } catch (error) {
@@ -162,11 +163,11 @@ const Restaurants = () => {
             const data = await response.json();
 
             if (!response.ok) {
-                alert(data.message);
+                toast.error(data.message);
                 return;
             };
 
-            alert('Restaurant updated succesfully');
+            toast.success('Restaurant updated succesfully');
 
             setFormData({
                 name: '',

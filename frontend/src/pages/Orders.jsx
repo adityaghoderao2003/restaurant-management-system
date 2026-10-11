@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-
+import { toast } from 'react-toastify';
 const Orders = () => {
     const [orders, setOrders] = useState([]);
     const [restaurants, setRestaurants] = useState([]);
@@ -30,7 +30,7 @@ const Orders = () => {
             const data = await response.json();
 
             if (!response.ok) {
-                alert(data.message);
+                toast.error(data.message);
                 return;
             }
 
@@ -50,7 +50,7 @@ const Orders = () => {
             const data = await response.json();
 
             if (!response.ok) {
-                alert(data.message);
+                toast.error(data.message);
                 return;
             }
 
@@ -70,7 +70,7 @@ const Orders = () => {
             const data = await response.json();
 
             if (!response.ok) {
-                alert(data.message);
+                toast.error(data.message);
                 return;
             }
 
@@ -112,11 +112,11 @@ const Orders = () => {
             const data = await response.json();
 
             if (!response.ok) {
-                alert(data.message);
+                toast.error(data.message);
                 return;
             }
 
-            alert("Order created successfully");
+            toast.success("Order created successfully");
 
             setFormData({
                 restaurant: "",
@@ -151,11 +151,11 @@ const Orders = () => {
             const data = await response.json();
 
             if (!response.ok) {
-                alert(data.message);
+                toast.error(data.message);
                 return;
             }
 
-            alert("Order status updated successfully");
+            toast.success("Order status updated successfully");
             getOrders();
         } catch (error) {
             console.log(error);
@@ -186,11 +186,11 @@ const Orders = () => {
             const data = await response.json();
 
             if (!response.ok) {
-                alert(data.message);
+                toast.error(data.message);
                 return;
             }
 
-            alert("Order deleted successfully");
+            toast.success("Order deleted successfully");
             getOrders();
         } catch (error) {
             console.log(error);

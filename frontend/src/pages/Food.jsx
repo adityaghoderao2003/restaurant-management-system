@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 const Food = () => {
     const [formdata, setFormdata] = useState({
@@ -26,7 +27,7 @@ const Food = () => {
             const data = await response.json();
 
             if (!response.ok) {
-                alert(data.message);
+                toast.error(data.message);
                 return;
             }
 
@@ -60,7 +61,7 @@ const Food = () => {
             const data = await response.json();
 
             if (!response.ok) {
-                alert(data.message);
+                toast.error(data.message);
                 return;
             }
 
@@ -101,11 +102,11 @@ const Food = () => {
             const data = await response.json();
 
             if (!response.ok) {
-                alert(data.message);
+               toast.error(data.message);
                 return;
             }
 
-            alert("Food created successfully");
+            toast.success("Food created successfully");
 
             setFormdata({
                 name: "",
@@ -154,11 +155,11 @@ const Food = () => {
             const data = await response.json();
 
             if (!response.ok) {
-                alert(data.message);
+                toast.error(data.message);
                 return;
             }
 
-            alert("Food updated successfully");
+            toast.success("Food updated successfully");
 
             setFormdata({
                 name: "",

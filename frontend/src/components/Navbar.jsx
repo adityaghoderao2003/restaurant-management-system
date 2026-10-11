@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 function Navbar() {
     const role = localStorage.getItem("role");
@@ -9,7 +10,7 @@ function Navbar() {
         localStorage.removeItem('token');
         localStorage.removeItem('role');
 
-        alert('Logout successful');
+        toast.success('Logout successful');
         navigate('/login');
     }
     
